@@ -11,6 +11,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    public void onStart( View view ){
+        ((Chronometer)findViewById(R.id.timer)).setBase(SystemClock.elapsedRealtime());
         ((Chronometer)findViewById(R.id.timer)).start();
     }
+    public void onStop( View view ){
+        ((Chronometer)findViewById(R.id.timer)).stop();
+    }
+
 }
