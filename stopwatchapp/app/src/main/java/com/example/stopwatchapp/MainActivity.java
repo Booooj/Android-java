@@ -3,6 +3,9 @@ package com.example.stopwatchapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.Chronometer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,4 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    public void onStart( View view ){
+        ((Chronometer)findViewById(R.id.timer)).setBase(SystemClock.elapsedRealtime());
+        ((Chronometer)findViewById(R.id.timer)).start();
+    }
+    public void onStop( View view ){
+        ((Chronometer)findViewById(R.id.timer)).stop();
+    }
+
 }
